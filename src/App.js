@@ -10,9 +10,9 @@ class App extends Component {
     return (
       <Fragment>
         <Menu />
-        <Route exact path="/" component={HomeContainer} />
-        <Route exact path="/blog" component={BlogContainer} />
-        <Route path="/blog/:id" component={Post} />
+        <Route exact path="/portfolio/" component={HomeContainer} />
+        <Route exact path="/portfolio/blog" component={BlogContainer} />
+        <Route path="/portfolio/blog/:id" component={Post} />
         <footer>
           Made with <i className="far fa-heart" /> by Aubree Abril
         </footer>
