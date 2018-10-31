@@ -6,7 +6,7 @@ const About = props => {
     <React.Fragment>
       <a name="about" />
       <Jumbotron
-        style={{ height: window.innerHeight, backgroundColor: "white" }}
+        style={{ minHeight: window.innerHeight, backgroundColor: "white" }}
       >
         <i
           className="fas fa-code"
