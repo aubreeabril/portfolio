@@ -11,7 +11,7 @@ class App extends Component {
       <Fragment>
         <Menu />
         <Route exact path="/portfolio/" component={HomeContainer} />
-        <Route exact path="/portfolio/blog" component={BlogContainer} />
+        <Route path="/portfolio/blog" component={BlogContainer} />
         <Route path="/portfolio/blog/:id" component={Post} />
         <footer>
           Made with <i className="far fa-heart" /> by Aubree Abril
