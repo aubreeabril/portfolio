@@ -1,36 +1,24 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
-import { posts } from "./RawBlogPosts";
+import { Jumbotron } from "reactstrap";
 
 class Post extends React.Component {
-  state = {
-    currentPost: posts.find(
-      p => parseInt(this.props.match.params.id, 10) === p.id
-    )
-  };
-
-  componentDidMount() {
-    console.log(this.props.match.params.id);
-    console.log(posts);
-  }
-
   render() {
     return (
-      <div>
-        {this.state.currentPost ? (
-          <React.Fragment>
-            <h1>{this.state.currentPost.title}</h1>
-            <p>{this.state.currentPost.date}</p>
-            {this.state.currentPost.body.split(`\n`).map(graf => (
-              <p>{graf}</p>
-            ))}
-          </React.Fragment>
-        ) : (
-          "Loading ..."
-        )}
-      </div>
+      <Jumbotron
+        style={{ minHeight: window.innerHeight, backgroundColor: "white" }}
+        className="single-post"
+      >
+        <h1 style={{ marginTop: "-40px" }}>{this.props.post.title}</h1>
+        <p className="meta-text">
+          {`${this.props.post.author.first_name} ${
+            this.props.post.author.last_name
+          }`}{" "}
+          | {new Date(this.props.post.published).toString()}
+        </p>
+        <div dangerouslySetInnerHTML={{ __html: this.props.post.body }} />
+      </Jumbotron>
     );
   }
 }
 
-export default withRouter(Post);
+export default Post;

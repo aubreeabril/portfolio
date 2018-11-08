@@ -138,20 +138,45 @@ footer {
 }
 
 .blog-headline > a:link {
-  color: white;
+  color: #49494b;
 }
 
 .blog-headline > a:hover {
-  color: #49494b !important;
+  color: #d1bfa7 !important;
   text-decoration: none;
 }
 
 .blog-headline > a:visited {
-  color: white;
+  color: #49494b;
 }
 
-/* not working */
+.meta-text {
+  font-size: 0.8em;
+  margin-top: -10px;
+}
 
-icd {
-  text-align: right;
+img {
+  max-width: 100%;
+}
+
+pre {
+  background-color: rgb(189, 140, 125, 0.3);
+  padding: 10px;
+}
+
+.single-post {
+  color: #49494b;
+}
+
+.single-post > a:link {
+  color: #bd8c7d !important;
+}
+
+.single-post > a:visited {
+  color: #bd8c7d !important;
+}
+
+.headline-card {
+  padding: 10px;
+  margin-bottom: 10px;
 }

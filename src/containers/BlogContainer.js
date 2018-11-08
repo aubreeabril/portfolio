@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Jumbotron } from "reactstrap";
-import { posts } from "../components/RawBlogPosts";
+import {
+  Jumbotron,
+  ListGroup,
+  ListGroupItem,
+  ListGroupItemHeading,
+  ListGroupItemText
+} from "reactstrap";
+import Post from "../components/Post";
 
 class BlogContainer extends Component {
   render() {
@@ -10,19 +16,24 @@ class BlogContainer extends Component {
         className="blog-container"
         style={{ minHeight: window.innerHeight }}
       >
-        {posts.map(p => (
-          <div className="blog-item">
-            <h1 className="blog-headline">
-              <a href={`${p.link}`}>{p.title}</a>
-            </h1>
-            <p>{p.summary}</p>
-          </div>
-        ))}
+        <ListGroup>
+          {this.props.blogPosts
+            ? this.props.blogPosts.map(p => (
+                <ListGroupItem className="headline-card">
+                  <ListGroupItemHeading className="blog-headline">
+                    <Link to={`/portfolio/blogs/${p.slug}`}>{p.title} </Link>
+                  </ListGroupItemHeading>
+                  <p className="meta-text">
+                    {new Date(p.published).toString()}
+                  </p>
+                  <ListGroupItemText>{p.summary}</ListGroupItemText>
+                </ListGroupItem>
+              ))
+            : "Loading ..."}
+        </ListGroup>
       </Jumbotron>
     );
   }
 }
 
 export default BlogContainer;
-
-// <Link to={`/blog/${p.id}`}>{p.title}</Link>
