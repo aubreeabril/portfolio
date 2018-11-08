@@ -28,11 +28,12 @@ class App extends Component {
             <Menu />
             <Route exact path="/portfolio/" component={HomeContainer} />
             <Route
+              exact
               path="/portfolio/blog"
               render={() => <BlogContainer blogPosts={this.state.blogPosts} />}
             />
             <Route
-              path="/portfolio/blogs/:id"
+              path="/portfolio/blog/:id"
               render={data => {
                 console.log(data);
                 let selectedPost = this.state.blogPosts.find(

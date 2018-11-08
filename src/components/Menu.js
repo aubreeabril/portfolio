@@ -19,11 +19,6 @@ class Menu extends Component {
               <NavLink href="/portfolio/#projects">Projects</NavLink>
             </strong>
           </NavItem>
-          <NavItem>
-            <strong>
-              <NavLink href="/portfolio/blog">Blog</NavLink>
-            </strong>
-          </NavItem>
         </Nav>
       </Navbar>
     );
@@ -32,8 +27,8 @@ class Menu extends Component {
 
 export default Menu;
 
-//<NavItem>
-//  <strong>
-//    <NavLink href="/portfolio/blog">Blog</NavLink>
-//  </strong>
-//</NavItem>
+// <NavItem>
+//   <strong>
+//     <NavLink href="/portfolio/blog">Blog</NavLink>
+//   </strong>
+// </NavItem>

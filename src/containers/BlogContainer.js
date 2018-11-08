@@ -21,7 +21,7 @@ class BlogContainer extends Component {
             ? this.props.blogPosts.map(p => (
                 <ListGroupItem className="headline-card">
                   <ListGroupItemHeading className="blog-headline">
-                    <Link to={`/portfolio/blogs/${p.slug}`}>{p.title} </Link>
+                    <Link to={`/portfolio/blog/${p.slug}`}>{p.title} </Link>
                   </ListGroupItemHeading>
                   <p className="meta-text">
                     {new Date(p.published).toString()}
